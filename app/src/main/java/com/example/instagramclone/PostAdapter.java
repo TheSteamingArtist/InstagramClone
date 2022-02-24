@@ -1,6 +1,7 @@
 package com.example.instagramclone;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 {
     private Context context;
     private List<Post> posts;
+
+    public static final String TAG = "POST";
 
     public PostAdapter(Context context, List<Post> posts)
     {
@@ -69,6 +72,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 
             if(image != null)
             {
+                Log.i(TAG,"Null");
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }
         }
